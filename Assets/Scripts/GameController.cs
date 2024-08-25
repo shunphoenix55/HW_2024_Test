@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 [DefaultExecutionOrder(-100)]
 // Singleton class that controls the game, scoring, and UI
@@ -11,7 +12,17 @@ public class GameController : MonoBehaviour
 
     public TMP_Text scoreText;
 
-    private int _score = 1;
+    private int _score = 0;
+
+    // Target score to win the game
+    public int targetScore = 10;
+    // Height at which player dies
+    public float deathHeight = -5f;
+
+    public GameObject winScreen;
+    public GameObject loseScreen;
+
+    private GameObject player;
 
     private void Awake()
     {
@@ -35,9 +46,42 @@ public class GameController : MonoBehaviour
         }
     }
 
+
+    void Start()
+    {
+        UpdateScoreText();
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    private void FixedUpdate()
+    {
+        // Find player if it's null
+        if (!player)
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+
+        }
+
+        if (player.transform.position.y < deathHeight)
+        {
+            Lose();
+        }
+    }
     public void UpdateScoreText()
     {
         scoreText.text = Score.ToString();
+    }
+
+    public void Win()
+    {
+        winScreen.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void Lose()
+    {
+        loseScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 
 }

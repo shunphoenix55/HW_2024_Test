@@ -11,6 +11,8 @@ public class Pulpit : MonoBehaviour
     
     private float timeToNextPulpit;
 
+    private bool entered = false;
+
     public float currentTimetoLive;
     public bool pulpitSpawnFlag = false;
 
@@ -49,6 +51,15 @@ public class Pulpit : MonoBehaviour
 
         PulpitController.instance.pulpitCount--;
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && !entered)
+        {
+            entered = true;
+            GameController.instance.Score++;
+        }
     }
 
 

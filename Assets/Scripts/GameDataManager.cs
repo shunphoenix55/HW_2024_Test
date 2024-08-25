@@ -49,7 +49,6 @@ public class GameDataManager : MonoBehaviour
 
         // Read Doofusdata from JSON file
         string json = Resources.Load<TextAsset>("doofus_diary").ToString();
-        Debug.Log(json);
         doofusData = JsonUtility.FromJson<DoofusData>(json);
         playerData = doofusData.player_data;
         pulpitData = doofusData.pulpit_data;

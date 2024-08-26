@@ -2546,6 +2546,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2032729918395230915, guid: ecf646226b0b63a4d92984f3d689a975, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 9e3bc68c39f6ea941b596ea6c6657cf0, type: 2}
     - target: {fileID: 2034733390886979446, guid: ecf646226b0b63a4d92984f3d689a975, type: 3}
       propertyPath: m_Enabled
       value: 0

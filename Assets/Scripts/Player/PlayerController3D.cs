@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class PlayerController3D : MonoBehaviour
 
     private float speed = 5.0f;
     private Rigidbody rb;
+    private Animator animator;
 
     private Vector3 direction;
 
@@ -21,12 +23,16 @@ public class PlayerController3D : MonoBehaviour
         // Fetch speed from GameDataManager
         speed = GameDataManager.instance.playerData.speed;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(direction.x, 0.0f, direction.y).normalized * speed; // Normalize the vector to prevent faster diagonal movement
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+
+        // Set Speed property of the AnimatorController
+        animator.SetFloat("Speed", movement.magnitude);
 
         // Make character's rotation interpolate smoothly to the direction it's moving
         if (movement != Vector3.zero)

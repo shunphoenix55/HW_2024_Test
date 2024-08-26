@@ -68,7 +68,7 @@ public class Pulpit : MonoBehaviour
             // Store the original color of the material
             despawnMaterial.color = originalColor;
             // Make the material flash between the original color and the target color
-            despawnMaterial.DOColor(targetColor, 0.25f).SetLoops(-1, LoopType.Yoyo);
+            despawnMaterial.DOColor(targetColor, 0.25f).SetLoops(4, LoopType.Yoyo);
         }
     }
 

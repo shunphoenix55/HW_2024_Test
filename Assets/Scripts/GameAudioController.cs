@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameAudioController : MonoBehaviour
 {
     public AudioSource audioSource;
-
+    [Space]
     public AudioClip startAudio;
     public AudioClip loopAudio;
 

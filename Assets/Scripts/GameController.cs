@@ -10,19 +10,21 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
-    public TMP_Text scoreText;
 
     private int _score = 0;
 
+    private GameObject player;
+
+    public TMP_Text scoreText;
     // Target score to win the game
     public int targetScore = 10;
     // Height at which player dies
     public float deathHeight = -5f;
 
+    [Header("UI Screens")]
     public GameObject winScreen;
     public GameObject loseScreen;
 
-    private GameObject player;
 
     private void Awake()
     {

@@ -27,6 +27,12 @@ public class PlayerController3D : MonoBehaviour
     {
         Vector3 movement = new Vector3(direction.x, 0.0f, direction.y).normalized * speed; // Normalize the vector to prevent faster diagonal movement
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+
+        // Make character's rotation interpolate smoothly to the direction it's moving
+        if (movement != Vector3.zero)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+        }
     }
 
     // Using Unity's new input system

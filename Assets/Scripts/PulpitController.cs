@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PulpitController : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PulpitController : MonoBehaviour
 
     public float pulpitDistance = 2.0f;
     public int pulpitCount = 1;
+
+    public float spawnAnimationTime = 0.5f;
 
     private int previousRandomDirection;
 
@@ -77,9 +80,14 @@ public class PulpitController : MonoBehaviour
         // Calculate the position of the next Pulpit
         Vector3 nextPulpitPos = originPos + direction * pulpitDistance;
 
-        Instantiate(pulpitPrefab, nextPulpitPos, Quaternion.identity);
+        nextPulpit = Instantiate(pulpitPrefab, nextPulpitPos, Quaternion.identity);
 
         pulpitCount++;
+
+        // Set the scale to 0 then animate it to 1
+        nextPulpit.transform.localScale = Vector3.zero;
+        nextPulpit.transform.DOScale(Vector3.one, spawnAnimationTime);
+
 
     }
 

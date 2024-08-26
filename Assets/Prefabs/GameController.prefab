@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4967853599316944284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659858394074987232}
+  - component: {fileID: 761464075824485633}
+  - component: {fileID: 4280693076057436955}
+  - component: {fileID: 3345374482942813647}
+  - component: {fileID: 6627300969601040145}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1659858394074987232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967853599316944284}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.161833, y: -7.255656, z: -0.28366062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &761464075824485633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967853599316944284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62be9ed6f9a963c4da6dfa19f3d2785a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData:
+    speed: 0
+  pulpitData:
+    min_pulpit_destroy_time: 0
+    max_pulpit_destroy_time: 0
+    pulpit_spawn_time: 0
+--- !u!114 &4280693076057436955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967853599316944284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8539c2f35bdc4e242945589d15bf810e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulpitPrefab: {fileID: 4292525158821704410, guid: b3ec4dc1fb6d66640ab2b63ef7597eb5, type: 3}
+  currentPulpit: {fileID: 0}
+  nextPulpit: {fileID: 0}
+  pulpitDistance: 7
+  pulpitCount: 1
+  spawnAnimationTime: 0.5
+--- !u!114 &3345374482942813647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967853599316944284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87abe0c5818907f4ebdd99dc1d211958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  targetScore: 10
+  deathHeight: -5
+  winScreen: {fileID: 0}
+  loseScreen: {fileID: 0}
+--- !u!114 &6627300969601040145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967853599316944284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a23de44aa2646844aa000be6c278ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

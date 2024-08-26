@@ -308,8 +308,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4490411257009515896}
   - {fileID: 4592262239977432539}
+  - {fileID: 4490411257009515896}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8357548416368574150
@@ -324,9 +324,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd954a75fa0c31c4c8cd099c38e8660d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTimetoLive: 0
   pulpitSpawnFlag: 0
+  currentTimetoLive: 0
+  destroyAnimationTime: 0.5
   timerText: {fileID: 993668867728758846}
+  despawnMaterial: {fileID: 2100000, guid: 57f1a2414adb4094e838bd8adbc2a28c, type: 2}
+  originalColor: {r: 0.5686275, g: 1, b: 0.52156866, a: 1}
+  targetColor: {r: 1, g: 0.3882353, b: 0.21568628, a: 1}
 --- !u!65 &8212972768963260841
 BoxCollider:
   m_ObjectHideFlags: 0
